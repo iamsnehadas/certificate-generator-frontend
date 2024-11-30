@@ -1,3 +1,4 @@
+// src/components/certificateForm.js
 import React, { useState } from "react";
 import api from "../api/api";
 
@@ -15,7 +16,7 @@ const CertificateForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post("/certificates", formData);
+      const response = await api.post("/", formData);  // Corrected API endpoint
       alert(`Certificate created! Link: ${response.data.link}`);
     } catch (error) {
       console.error("Error creating certificate:", error);
